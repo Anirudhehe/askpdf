@@ -4,6 +4,7 @@ import { UserButton} from "@clerk/nextjs";
 import {auth} from "@clerk/nextjs/server"
 import Link from "next/link"
 import { LogIn } from "lucide-react";
+import FileUpload from "@/components/FileUpload";
 
 export default async function Home() {
 
@@ -23,9 +24,9 @@ export default async function Home() {
             {isAuth && <Button className="mt-3">Go to Chats</Button>}
           </div>
 
-          <p className="max-w-xl mt-1 text-lg text-slate-600">Designed for students & professionals — chat with your PDFs and uncover insights instantly.</p>
+          <p className="max-w-xl mt-2 text-lg text-slate-600">Designed for Students & Professionals — chat with your PDFs and uncover insights instantly.</p>
           <div className="w-full mt-4">
-            {isAuth ?(<h1>file upload</h1>):(
+            {isAuth ?(<h1><FileUpload/></h1>):(
             <Link href="/sign-in">
               <Button>Login To Get Started
                 <LogIn className="h-2 w-2 ml-2"></LogIn>
